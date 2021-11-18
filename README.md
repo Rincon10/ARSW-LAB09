@@ -90,3 +90,4 @@ cada uno de ellos.
 
 * [Descripción general de la cuenta de almacenamiento Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview)
 
+* [Tutorial para que funcione Azure-functions correctamente](https://github.com/Azure/azure-functions-core-tools)
