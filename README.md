@@ -42,10 +42,52 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 **Preguntas**
 
 * ¿Qué es un Azure Function?
+
+Azure Functions es una solución serverless que nos  permite escribir pequeños fragmentos de código o funciones en la nube, esto con el fin de mantener menos infraestructura y lograr ahorrar costos. En lugar de preocuparse por la implementación y el mantenimiento de los servidores, la infraestructura de la nube proporciona todos los recursos actualizados necesarios para mantener sus aplicaciones en funcionamiento.
+
+Azure function se basa en escala y bajo demanda, por lo que solo se paga por los recursos consumidos; se factura según el número total de ejecuciones solicitadas cada mes para todas las funciones. 
+
 * ¿Qué es serverless?
+
+La computación sin servidor (o serverless para abreviar) es un modelo de ejecución en el que el proveedor en la nube (AWS, Azure o Google Cloud) es responsable de ejecutar un fragmento de código mediante la asignación dinámica de los recursos. Y cobrando solo por la cantidad de recursos utilizados para ejecutar el código. El código, generalmente, se ejecuta dentro de contenedores sin estado que pueden ser activados por una variedad de eventos que incluyen solicitudes HTTP, eventos de base de datos, servicios de colas, alertas de monitoreo, carga de archivos, eventos programados (trabajos cron), etc.
+
 * ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?
+
+Se denomina tiempo de ejecución al intervalo de tiempo en el que un programa de computadora se ejecuta en un sistema operativo.
+
+ En este caso utilizamos el plan Consumption y la versión de runtime 12, lo cual implica que el tiempo de timeout será de 5 minutos y además nuestra memoria se limpiará en este intervalo de tiempo.
+
+
 * ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
-* ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
-* ¿Por qué la memoization falla o no funciona de forma correcta?
+
+Debido a que las funciones de azure se basan en el servicio Azure Storage para el almacenamiento y administracion como son los disparadores y logs.
+
+* ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de 
+cada uno de ellos.
+
+    * Consumption: Ofrece escalabilidad dinámica y factura solo cuando la aplicación es ejecutada, tiene un timeout es de 5 minutos y brinda una memoria máxima de 1.5 GB por instancia, un almacenamiento de 1 GB y un máximo número de instancias de 200.
+
+    * Premium: Ofrece escalabilidad dinámica, se factura por el número en segundos de core y la memoria usada en las distintas instancias, puede tener timeouts ilimitados, memoria por instancia de 3.5 GB y un almacenamiento de hasta 250 GB, finalmente ofrece un máximo de 100 instancias.
+    
+    * Dedicated: El cliente puede implementar manualmente la escalabilidad, puede tener timeouts ilimitados, memoría por instancia de 1.7 GB y una capacidad de almacenamiento hasta de 1000 GB y el numero de instancias es máximo 20. En este plan se paga lo mismo que por otros recursos de App Service, como las aplicaciones web
+
+* ¿Por qué la memorizacion falla o no funciona de forma correcta?
+
 * ¿Cómo funciona el sistema de facturación de las Function App?
+
 * Informe
+
+
+## Referencias
+
+* [Azure funrctions documentation](https://docs.microsoft.com/en-us/azure/azure-functions/)
+
+* [Introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
+
+* [Computacion serveless](https://serverless-stack.com/chapters/es/what-is-serverless.html)
+
+* [¿Qué es "runtime"?](https://www.it-swarm-es.com/es/terminology/que-es-runtime/970647593/)
+
+* [Descripción general de la cuenta de almacenamiento Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview)
+
+* [Tutorial para que funcione Azure-functions correctamente](https://github.com/Azure/azure-functions-core-tools)
