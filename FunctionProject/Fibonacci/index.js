@@ -22,6 +22,6 @@ module.exports = async function (context, req) {
     }
 
     context.res = {
-        body: answer.toString()
+        body: JSON.stringify(answer.toString())
     };
 }

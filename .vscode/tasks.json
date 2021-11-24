@@ -2,19 +2,6 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "func",
-			"command": "host start",
-			"problemMatcher": "$func-watch",
-			"isBackground": true,
-			"dependsOn": [
-				"func: extensions install",
-				"npm install"
-			],
-			"options": {
-				"cwd": "${workspaceFolder}/FunctionProject"
-			}
-		},
-		{
 			"type": "shell",
 			"label": "npm install",
 			"command": "npm install",
@@ -27,6 +14,33 @@
 			"label": "npm prune",
 			"command": "npm prune --production",
 			"dependsOn": "func: extensions install",
+			"problemMatcher": [],
+			"options": {
+				"cwd": "${workspaceFolder}/FunctionProject"
+			}
+		},
+		{
+			"type": "func",
+			"command": "host start",
+			"problemMatcher": "$func-node-watch",
+			"isBackground": true,
+			"dependsOn": "npm install (functions)",
+			"options": {
+				"cwd": "${workspaceFolder}/FunctionProject"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "npm install (functions)",
+			"command": "npm install",
+			"options": {
+				"cwd": "${workspaceFolder}/FunctionProject"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "npm prune (functions)",
+			"command": "npm prune --production",
 			"problemMatcher": [],
 			"options": {
 				"cwd": "${workspaceFolder}/FunctionProject"
